@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paper Airlines</title>
+
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- // <script src="/bower_components/angular-cookies/angular-cookies.js"></script> -->
+  <script src="/bower_components/satellizer/satellizer.min.js"></script>
+
+  <script src="/js/module.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/services.js"></script>
+
+</head>
+<body ng-app='myApp' ng-controller='mainCtrl'>
+  <div class="container">
+    <h1>Paper Airlines</h1>
+
+
+    <h2> isAuthenticated: {{ isAuthenticated() }} </h2>
+    
+    <button class="btn" ui-sref='home'>Home</button>
+    <span ng-if='!isAuthenticated()'>
+      <button class="btn" ui-sref='login'>Login</button>
+      <button class="btn" ui-sref='register'>Register</button>
+    </span>
+    <span ng-if='isAuthenticated()'>
+      <button class="btn" ng-click='logout()'>Logout</button>
+    </span>
+
+    <button class="btn" ui-sref='profile'>Profile</button>
+    <!-- <button class="btn btn-danger" ng-click="edit(user._id)">Edit</button> -->
+    <!-- <button class="btn btn-info" ng-click="update()">Update</button> -->
+
+    <ui-view><ui-view>
+    
+  </div>
+</body>
+</html>

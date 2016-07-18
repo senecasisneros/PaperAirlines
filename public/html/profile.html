@@ -1,0 +1,80 @@
+<h1>Profile</h1>
+
+<!-- <img ng-src="{{user.profileImage}}"> -->
+
+<pre>{{ profile | json}}</pre>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <img ng-src="{{profile.profileImage}}" class="img" />
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <h4>
+            {{profile.displayName}}</h4>
+              <small><cite title="Location">{{profile.location}} <i class="glyphicon glyphicon-map-marker">
+              </i></cite></small>
+              <p>
+                <i class="glyphicon glyphicon-envelope"></i>  {{profile.email}}
+                <br />
+                <i class="glyphicon glyphicon-asterisk"></i>{{profile.birthdate}} 
+                <br />
+                <i class="glyphicon glyphicon-info-sign"></i>{{profile.gender}} 
+                <br />
+                <i class="glyphicon glyphicon-education"></i>{{profile.education}} 
+                <br />
+                <i class="glyphicon glyphicon-heart"></i>{{profile.relationship}} 
+                <br />
+                <!-- Split button -->
+                <!-- <div class="btn-group">
+                  <button type="button" class="btn btn-primary">
+                    Social</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span><span class="sr-only">Social</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
+                      <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Github</a></li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+<form ng-submit='editProfile()'>
+<div class="form-group">
+  <label class="control-label">Add age</label>
+  <input type="number" class="form-control" ng-model="newItem.birthdate">
+</div>
+<div class="form-group">
+  <label class="control-label">Add Gender</label>
+  <input type="text" class="form-control" ng-model="newItem.gender">
+</div>
+<div class="form-group">
+  <label class="control-label">Add Education</label>
+  <input type="text" class="form-control" ng-model="newItem.education">
+</div>
+<div class="form-group">
+  <label class="control-label">Add Location</label>
+  <input type="text" class="form-control" ng-model="newItem.location">
+</div>
+<div class="form-group">
+  <label class="control-label">Add Relationship</label>
+  <input type="text" class="form-control" ng-model="newItem.relationship">
+</div>
+<button class="btn btn-success">Create Profile</button>
+</form>
+
